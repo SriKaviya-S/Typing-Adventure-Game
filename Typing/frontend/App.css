@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  position: relative; /* Ensures the content is within the same stacking context */
+  height: 100vh;
+  width: 100%;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
+  z-index: 1; /* Background is behind the obstacles */
+}
+
+.App-header {
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2; /* Obstacles are above the background */
+}
+
+.obstacle {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  z-index: 3; /* Obstacles are on top of the background */
+}
+
+.runner {
+  font-size: 50px;
+  position: absolute;
+  bottom: 50%;
+  left: 10%;
+  transition: bottom 0.5s ease-out;
+  z-index: 3; /* Runner is on top of the background */
+}
